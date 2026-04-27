@@ -1,8 +1,13 @@
 import os
 import pandas as pd
 
-# Load CSV file
-df = pd.read_csv('data.csv')
+workspace = os.getenv("GITHUB_WORKSPACE")
+
+model_cleaning_dir = os.path.join(workspace, "ModelCleaning")
+
+input_path = os.path.join(model_cleaning_dir, "Data.csv")
+
+df = pd.read_csv(input_path)
 
 # Show original data
 print("Original Data:")
